@@ -92,8 +92,10 @@
 			}
 			#calendar {
 				display: grid;
-				grid-template-columns: repeat(8, 1fr);
-				width: 80dvw;
+				grid-template-columns: repeat(8, minmax(0, 1fr));
+				width: 100dvw;
+				max-width: 100dvw;
+				overflow-x: hidden;
 				container-type: inline-size;
 			}
 			#calendar span {
