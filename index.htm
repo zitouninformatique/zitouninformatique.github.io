@@ -105,9 +105,6 @@
 				font-size: max(1rem, 2cqw);
 			}
 			#calendar span:nth-child(-n+8) {
-				position: sticky;
-				top: 0;
-				z-index: 9;
 				background: var(--bg1);
 				color: var(--text);
 				font-weight: bold;
@@ -117,14 +114,10 @@
 					writing-mode: sideways-lr;
 					width: 100%;
 					height: 100%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
 					overflow: hidden;
 				}
 			}
-			/*
-			.weekdays {
+			/*.weekdays {
 				display: grid;
 				grid-template-columns: repeat(8, 1fr);
 				text-align: center;
