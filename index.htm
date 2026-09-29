@@ -112,6 +112,12 @@
 				border-bottom: 1px solid var(--border-color, #e5e5e5);
 				font-weight: bold;
 			}
+			@media (orientation: portrait) {
+				#calendar span:nth-child(-n+8) {
+					writing-mode: sideways-lr;
+					justify-self: center;
+				}
+			}
 			/*
 			.weekdays {
 				display: grid;
