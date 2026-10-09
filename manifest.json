@@ -1,0 +1,35 @@
+{
+	"name": "مادة المعلوماتية للسنة الأولى ثانوي",
+	"short_name": "المعلوماتية للسنة الأولى ثانوي",
+	"description": "هذا الفضاء الرقمي صدقةٌ جاريةٌ عن موتانا وموتى المؤمنين، وَنَخُصُّ إحدى عشرة معلّمةً ومعلّماً واحداً من شهداء الواجب الوطني وكافّة ضحايا الارهاب.",
+	"display": "standalone",
+	"display_override": ["window-controls-overlay"],
+	"start_url": "/",
+	"theme_color": "#F8F9FA",
+	"icons": [
+		{
+			"src": "assets/مجموعة الـ 22.png",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "assets/مجموعة الـ 22.png",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "maskable"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "الفرقان",
+			"url":"assets/quran.htm",
+			"icons": [
+				{
+					"src": "assets/مجموعة الـ 22.png",
+					"sizes": "any",
+					"type": "image/svg+xml"
+				}
+			]
+		}
+	]
+}
