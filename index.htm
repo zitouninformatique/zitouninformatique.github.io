@@ -243,24 +243,23 @@
 						fetch(APPS_SCRIPT_URL, {
 								method: 'POST',
 								mode: 'cors',
+								redirect: 'follow',
 								headers: {
 									'Content-Type': 'text/plain;charset=utf-8'
 								},
 								body: JSON.stringify(payload)
-							})
-							.then(res => res.json())
-							.then(data => {
+							}).then(res => res.json()).then(data => {
 								if (data.status === 'success') {
 									status.style.color = "green";
-									status.textContent = `تم رفع الواجب بنجاح! البريد الموثق: ${data.verifiedEmail}`;
+									status.textContent = `تم التسليم بنجاح! البريد الموثق: ${data.verifiedEmail}`;
 									document.getElementById('submissionForm').reset();
 								} else {
 									status.style.color = "red";
-									status.textContent = "حدث خطأ: " + data.message;
+									status.textContent = `خطأ: ${data.message}`;
 								}
 							}).catch(err => {
 								status.style.color = "red";
-								status.textContent = "فشل الإرسال. يرجى التأكد من تسجيل الدخول بحساب Google والإذن للبرنامج.";
+								status.textContent = "تعذر الاتصال بالخادم. يرجى التأكد من تسجيل الدخول بحساب Google والسماح بالصلاحيات.";
 							}).finally(() => {
 								btn.disabled = false;
 								btn.textContent = "ارفع العمل وتأكيد الهوية";
