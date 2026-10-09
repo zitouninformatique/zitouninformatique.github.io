@@ -216,57 +216,58 @@
 				navigator.clipboard.writeText(clone.innerText.replace(/^\s+|[^\S\r\n]+$|^[^\S\r\n]+|\s+$/gm, '')).then(() => {
 					
 				});
-			};
-			const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxA-mu-EutuU_aSPf4MR2oVDvBwd-iC4gCEn7VEYCLKD73mWpMM1TzzPZfxMWmKPKU_/exec";
-			document.getElementById('submissionForm').addEventListener('submit', function(e) {
-				e.preventDefault();
-				const studentName = document.getElementById('studentName').value.trim();
-				const studentClass = document.getElementById('studentClass').value.trim();
-				const fileInput = document.getElementById('fileInput');
-				const btn = document.getElementById('submitBtn');
-				const status = document.getElementById('statusMessage');
-				if (!fileInput.files.length) return;
-				const file = fileInput.files[0];
-				btn.disabled = true;
-				btn.textContent = "جاري الاتصال والرفع...";
-				status.textContent = "";
-				const reader = new FileReader();
-				reader.onload = function(evt) {
-					const base64Data = evt.target.result.split(',')[1];
-					const payload = {
-						studentName: studentName,
-						studentClass: studentClass,
-						fileName: file.name,
-						mimeType: file.type || "text/html",
-						fileData: base64Data
-					};
-					fetch(APPS_SCRIPT_URL, {
-							method: 'POST',
-							mode: 'cors',
-							headers: {
-								'Content-Type': 'text/plain;charset=utf-8'
-							},
-							body: JSON.stringify(payload)
-						})
-						.then(res => res.json())
-						.then(data => {
-							if (data.status === 'success') {
-								status.style.color = "green";
-								status.textContent = `تم رفع الواجب بنجاح! البريد الموثق: ${data.verifiedEmail}`;
-								document.getElementById('submissionForm').reset();
-							} else {
+			}, APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxA-mu-EutuU_aSPf4MR2oVDvBwd-iC4gCEn7VEYCLKD73mWpMM1TzzPZfxMWmKPKU_/exec";
+			addEventListener('load', () => {
+				document.getElementById('submissionForm').addEventListener('submit', function(e) {
+					e.preventDefault();
+					const studentName = document.getElementById('studentName').value.trim();
+					const studentClass = document.getElementById('studentClass').value.trim();
+					const fileInput = document.getElementById('fileInput');
+					const btn = document.getElementById('submitBtn');
+					const status = document.getElementById('statusMessage');
+					if (!fileInput.files.length) return;
+					const file = fileInput.files[0];
+					btn.disabled = true;
+					btn.textContent = "جاري الاتصال والرفع...";
+					status.textContent = "";
+					const reader = new FileReader();
+					reader.onload = function(evt) {
+						const base64Data = evt.target.result.split(',')[1];
+						const payload = {
+							studentName: studentName,
+							studentClass: studentClass,
+							fileName: file.name,
+							mimeType: file.type || "text/html",
+							fileData: base64Data
+						};
+						fetch(APPS_SCRIPT_URL, {
+								method: 'POST',
+								mode: 'cors',
+								headers: {
+									'Content-Type': 'text/plain;charset=utf-8'
+								},
+								body: JSON.stringify(payload)
+							})
+							.then(res => res.json())
+							.then(data => {
+								if (data.status === 'success') {
+									status.style.color = "green";
+									status.textContent = `تم رفع الواجب بنجاح! البريد الموثق: ${data.verifiedEmail}`;
+									document.getElementById('submissionForm').reset();
+								} else {
+									status.style.color = "red";
+									status.textContent = "حدث خطأ: " + data.message;
+								}
+							}).catch(err => {
 								status.style.color = "red";
-								status.textContent = "حدث خطأ: " + data.message;
-							}
-						}).catch(err => {
-							status.style.color = "red";
-							status.textContent = "فشل الإرسال. يرجى التأكد من تسجيل الدخول بحساب Google والإذن للبرنامج.";
-						}).finally(() => {
-							btn.disabled = false;
-							btn.textContent = "ارفع العمل وتأكيد الهوية";
-						});
-				};
-				reader.readAsDataURL(file);
+								status.textContent = "فشل الإرسال. يرجى التأكد من تسجيل الدخول بحساب Google والإذن للبرنامج.";
+							}).finally(() => {
+								btn.disabled = false;
+								btn.textContent = "ارفع العمل وتأكيد الهوية";
+							});
+					};
+					reader.readAsDataURL(file);
+				});
 			});
 		</script>
 	</head>
