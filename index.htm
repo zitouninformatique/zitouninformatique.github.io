@@ -1,1 +1,378 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="UTF-8">
+		<title>مادة المعلوماتية للسنة الأولى ثانوي</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="canonical" href="https://zitouninformatique.github.io">
+		<meta name="description" content="هذا الفضاء الرقمي صدقةٌ جاريةٌ عن موتانا وموتى المؤمنين، وَنَخُصُّ إحدى عشرة معلّمةً ومعلّماً واحداً من شهداء الواجب الوطني وكافّة ضحايا الارهاب.">
+		<meta name="keywords" content="مادة المعلوماتية للسنة الأولى ثانوي">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="icon" href="assets/مجموعة الـ 22.png">
+		<link rel="apple-touch-icon" href="assets/مجموعة الـ 22.png">
+		<meta property="og:url" content="https://zitouninformatique.github.io">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://zitouninformatique.github.io/assets/الذكرى الـ 75 للنكبة الفلسطينية.png">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@zitouninformatique">
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"url": "https://zitouninformatique.github.io",
+				"about": [ // This reduces ambiguity better than relying solely on keyword analysis of your <h2> tags
+					"مادة المعلوماتية للسنة الأولى ثانوي"
+				],
+				"sameAs": [
+					"https://github.com/zitouninformatique"
+				],
+				"potentialAction": {
+					"@type": "SearchAction",
+					"target": {
+						"@type": "EntryPoint",
+						"urlTemplate": "https://zitouninformatique.github.io/?q={search_term_string}"
+					},
+					"query-input": "required name=search_term_string"
+				}
+			}
+		</script>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				font-size: 13pt;
+			}
+			body {
+				background: #F8F9FA;
+				color: #333;
+				padding: 5mm;
+			}
+			header {
+				margin-bottom: 5mm;
+			}
+			footer {
+				max-width: 210mm;
+				margin: 5mm auto 0;
+			}
+			header, footer {
+				text-align: center;
+			}
+			footer {
+				display: grid;
+				grid-template-columns: auto auto;
+				justify-content: space-between;
+				gap: 5mm;
+				max-width: 210mm;
+			}
+			footer img {
+				height: 5cm;
+			}
+			@media (orientation: portrait) {
+				footer {
+					grid-template-columns: 1fr;
+				}
+				footer img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			h1, summary ~ :not(fieldset) {
+				white-space: pre-line;
+			}
+			main {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 5mm;
+				max-width: 210mm;
+				margin: 0 auto;
+			}
+			details {
+				background: #FFF;
+				overflow: hidden;
+				border-radius: 2mm;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+			summary {
+				padding: 5mm;
+				font-weight: bold;
+				background: #006633;
+				color: #FFF;
+				cursor: pointer;
+				list-style: none; /* Hide default arrow */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			summary::after {
+				content: '▼';
+			}
+			details[open] summary::after {
+				transform: rotate(180deg);
+			}
+			details:nth-last-child(-n + 2) summary {
+				background: #D21034;
+			}
+			summary ~ :not(fieldset) {
+				padding: 5mm;
+				line-height: 1.5;
+			}
+			summary ~ :not(fieldset)::first-line {
+				line-height: 0;
+				font-size: 0;
+			}
+			a, label {
+				color: #D21034;
+				font-weight: bold;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			a:active, label:active {
+				color: #006633 !important;
+			}
+			a:visited {
+				color: #D21034;
+			}
+			fieldset {
+				margin: 0 5mm;
+				border: 1.5pt dashed #D21034;
+				border-radius: 2mm;
+			}
+			fieldset:has(button:active), details:has(label[for="button1"]:active) fieldset {
+				border-color: #006633;
+				border-style: solid;
+			}
+			legend {
+				margin: 0 auto;
+				padding: 0 5mm;
+			}
+			legend + * {
+				padding: 5mm;
+				white-space: pre-line;
+				line-height: 1.5;
+			}
+			legend + *::first-line {
+				line-height: 0;
+				font-size: 0;
+			}
+			button {
+				padding: 3mm 5mm;
+				background: #D21034;
+				color: #FFF;
+				font-weight: bold;
+				border: none;
+				border-radius: 2mm;
+				cursor: pointer;
+			}
+			button:active {
+				background: #006633;
+			}
+			@media print {
+				@page {
+					margin: 1cm;
+					margin-bottom: 2cm;
+					@bottom-center {
+						content: "صفحة " counter(page) " من " counter(pages);
+						vertical-align: top;
+					}
+				}
+				body {
+					padding: 0;
+				}
+				main {
+					max-width: none;
+					gap: 0;
+				}
+				::details-content {
+					content-visibility: visible;
+				}
+				details {
+					box-shadow: none;
+				}
+				details:nth-last-child(-n + 2) {
+					display: none;
+				}
+				summary {
+					padding: 0;
+					color: #006633;
+				}
+				summary::after {
+					content: none;
+				}
+				fieldset {
+					border: .5pt solid #000;
+					border-radius: unset;
+				}
+				footer {
+					display: none;
+				}
+			}
+		</style>
+		<script>
+			const copyFieldsetText = element => {
+				const clone = element.closest('fieldset').cloneNode(1);
+				clone.firstElementChild.remove();
+				navigator.clipboard.writeText(clone.innerText.replace(/^\s+|[^\S\r\n]+$|^[^\S\r\n]+|\s+$/gm, '')).then(() => {
+					
+				});
+			};
+			const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxA-mu-EutuU_aSPf4MR2oVDvBwd-iC4gCEn7VEYCLKD73mWpMM1TzzPZfxMWmKPKU_/exec";
+			document.getElementById('submissionForm').addEventListener('submit', function(e) {
+				e.preventDefault();
+				const studentName = document.getElementById('studentName').value.trim();
+				const studentClass = document.getElementById('studentClass').value.trim();
+				const fileInput = document.getElementById('fileInput');
+				const btn = document.getElementById('submitBtn');
+				const status = document.getElementById('statusMessage');
+				if (!fileInput.files.length) return;
+				const file = fileInput.files[0];
+				btn.disabled = true;
+				btn.textContent = "جاري الاتصال والرفع...";
+				status.textContent = "";
+				const reader = new FileReader();
+				reader.onload = function(evt) {
+					const base64Data = evt.target.result.split(',')[1];
+					const payload = {
+						studentName: studentName,
+						studentClass: studentClass,
+						fileName: file.name,
+						mimeType: file.type || "text/html",
+						fileData: base64Data
+					};
+					fetch(APPS_SCRIPT_URL, {
+							method: 'POST',
+							mode: 'cors',
+							headers: {
+								'Content-Type': 'text/plain;charset=utf-8'
+							},
+							body: JSON.stringify(payload)
+						})
+						.then(res => res.json())
+						.then(data => {
+							if (data.status === 'success') {
+								status.style.color = "green";
+								status.textContent = `تم رفع الواجب بنجاح! البريد الموثق: ${data.verifiedEmail}`;
+								document.getElementById('submissionForm').reset();
+							} else {
+								status.style.color = "red";
+								status.textContent = "حدث خطأ: " + data.message;
+							}
+						}).catch(err => {
+							status.style.color = "red";
+							status.textContent = "فشل الإرسال. يرجى التأكد من تسجيل الدخول بحساب Google والإذن للبرنامج.";
+						}).finally(() => {
+							btn.disabled = false;
+							btn.textContent = "ارفع العمل وتأكيد الهوية";
+						});
+				};
+				reader.readAsDataURL(file);
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>الجمهورية الجزائرية الديمقراطية الشعبية
+			وزارة التربية الوطنية
+			مادة المعلوماتية للسنة الأولى ثانوي</h1>
+		</header>
+		<main>
+			<details open>
+				<summary>إشكالية الوحدة التعليمية الأولى للمجال التعلمي الأول – جذع مشترك علوم وتكنولوجيا وجذع مشترك آداب</summary>
+				<p>
+					في ظل التحول الرقمي المتسارع في مختلف المجالات، كيف يمكن استثمار هذه التقنيات لتعزيز تبادل المعرفة وضمان صحة المعلومة؟
+				</p>
+			</details>
+			<details>
+				<summary>المفاهيم الأساسية</summary>
+				<p>
+					<u>مفهوم البيانات</u>: هي مجموعة من الحروف والأرقام والرموز والصور المجردة التي يتم جمعها دون معالجة، ولا تعطي معنى واضحاً بحد ذاتها حتى تُوضع في سياقها وتُنظّم.
+					<u>مفهوم المعلومات</u>: هي البيانات التي تم تنظيمها ومعالجتها وتحليلها في سياق محدد، بحيث أصبحت ذات معنى وفائدة عملية تساعد على اتخاذ القرارات.
+					<u>مفهوم التقنية</u>: هي التطبيق العملي للعلوم والمعارف والأدوات والمعدات البرمجية والمادية في مجالات مختلفة، لتسهيل المهام اليومية وتلبية الاحتياجات وحل المشكلات بفاعلية.
+					<u>مفهوم المعلوماتية</u>: هو علم المعالجة الآلية للمعلومات باستخدام الحواسيب والأجهزة الرقمية، وتعتمد على التفاعل والمكاملة بين العتاد Hardware والبرمجيات Software.
+					<u>مفهوم تكنولوجيا الإعلام والاتصال</u>: هي مجموعة الأدوات والوسائل التقنية والأنظمة الإلكترونية المستخدمة لإنتاج ومعالجة وتخزين وتبادل المعلومات بمختلف أشكالها (صوت، صورة، نص) بكل سرعة ودقة عبر شبكات الاتصال المختلفة.
+				</p>
+			</details>
+			<details>
+				<summary>مجالات تقنية المعلومات</summary>
+				<p>
+					<u>التعليم والبحث العلمي</u>: المنصات الرقمية للتعليم عن بُعد والتعليم الافتراضي، المكتبات الإلكترونية.
+					<u>الصحة</u>: رقمنة ملفات المرضى إلكترونياً وتسيير الخدمات الطبية عبر الأنظمة الرقمية، الأجهزة الطبية الرقمية والتصوير الإشعاعي وتطبيقات الجراحة الدقيقة عن بُعد.
+					<u>الإدارة العمومية</u>: رقمنة المعاملات الإدارية للحصول على الوثائق الرسمية وسرعة معالجة الملفات.
+					<u>البنوك والخدمات المصرفية الإلكترونية</u>: اعتماد البنوك الإلكترونية والمعاملات المالية المباشرة وتطوير عمليات الدفع الإلكتروني والتجارة الإلكترونية.
+				</p>
+			</details>
+			<details>
+				<summary>مراحل تطور تكنولوجيا الإعلام والاتصال</summary>
+				<p>
+					<u>العصر الميكانيكي القديم (قبل 1450م)</u>: استخدام الرموز، النقوش، أوراق البردي، والأدوات الحسابية البسيطة كالعداد الصيني.
+					<u>العصر الميكانيكي (1450م - 1840م)</u>: آلات الطباعة والآلات الحاسبة الميكانيكية مثل آلة باسكال.
+					<u>العصر الكهروميكانيكي (1840م - 1940م)</u>: التلغراف، الهاتف، والحواسيب الأولى الضخمة.
+					<u>العصر الإلكتروني (1940م - الحاضر)</u>: الصمامات المفرغة، الترانزستور، الدوائر المدمجة، الأنترنيت، والذكاء الاصطناعي.
+				</p>
+			</details>
+			<details open>
+				<summary>النشاط الأول – يُنجز في نهاية الأسبوع ويُقَيَّم في الحصة المقبلة</summary>
+				<p>
+					<u>الكفاءة المستهدفة</u>: توظيف الذكاء الاصطناعي لإنشاء صفحة ويب حول الوحدة التعليمية الأولى للمجال التعلمي الأول.
+					<u>الوسائل المطلوبة</u>: حاسوب متصل بالأنترنيت أو هاتف ذكي.
+					<u>خطوات التنفيذ</u>:
+					1. <a href="https://gemini.google.com" target="_blank" rel="noopener">انقر هنا لفتح موقع Gemini في تبويب جديد</a>، ثم سجل الدخول باستخدام حسابك.
+					2. انقر على الزر <label for="button1">نسخ التعليمات والتوجيهات</label> أدناه ثم ألصقها في صندوق محادثة Gemini، وانقر على زر الإرسال.
+				</p>
+				<fieldset>
+					<legend><button type="button" id="button1" onclick="copyFieldsetText(this)">نسخ التعليمات والتوجيهات</button></legend>
+					<p>
+						أ
+						ب
+					</p>
+				</fieldset>
+				<p>
+					3. بعد توليد صفحة الويب، نَزِّل الملف ثم افْتَحْهُ بواسطة أي متصفح لمعاينة النتيجة.
+					4. املأ الاسم الكامل واختر القسم في الاستمارة أدناه:
+				</p>
+				<form id="submissionForm">
+					<label for="studentName">الاسم الكامل:</label>
+					<input type="text" id="studentName" placeholder="زيتوني بلعباس" required>
+					<label for="studentClass">القسم:</label>
+					<input type="text" id="studentClass" placeholder="1 ج م ع ت 1" required>
+					<label for="fileInput">ملف صفحة الويب:</label>
+					<input type="file" id="fileInput" accept=".html,.htm" required>
+					<button type="submit" id="submitBtn">ارفع العمل وتأكيد الهوية</button>
+				</form>
+				<div id="statusMessage" style="margin-top: 10px; font-weight: bold;"></div>
+				<p>
+					5. ارفع ملف صفحة الويب بعد تحميلها من Gemini، ثم اضغط على زر <label for="button2">إرسال</label>.
+					<u>ملاحظة</u>: اطلب تعديلات إضافية من الذكاء الاصطناعي لتطوير تصميم الصفحة وتخصيصها حسب رؤيتك.
+				</p>
+			</details>
+			<details aria-hidden="true">
+				<summary>نصائح وإرشادات</summary>
+				<p>
+					<b>يُمنع</b> استعمال القلم الأحمر نهائياً؛ وتُدوّن العناوين بالأخضر، أو <b>تُسطّر</b> إن دُونت بالأزرق أو الأسود.
+					<b>يُسلّم</b> الدفتر أسبوعياً لمعاينة تدوين الدرس كاملاً.
+					<b>استعد</b> للتقويم المرحلي بعد نهاية كل وحدة باستيعاب المحتوى والمفاهيم من الدفتر والكتاب.
+					<b>راجع</b> الوحدات التعليمية من الدفتر للتحضير للفرض، ومن الكتاب للحصول على العلامة الكاملة في الاختبار.
+				</p>
+			</details>
+			<details aria-hidden="true">
+				<summary>أهم مواد النظام الداخلي للمؤسسة</summary>
+				<p>
+					<u>المادة 46</u>: التزام التلميذ بالواجبات والضوابط التالية:
+					– احترام قواعد الانضباط والمواظبة؛
+					– احترام كافة أعضاء الجماعة التربوية؛
+					– المحافظة على الهياكل والتجهيزات والوسائل التعليمية؛
+					– المحافظة على نظافة المؤسسة ومحيطها؛
+					– ارتداء المئزر المدرسي؛
+					– استظهار دفتر المراسلة.
+					<u>المادة 49</u>: استفادة الأولياء من حق إعلامهم بالسلوكات التي تسجل على أبنائهم.
+					<u>المادة 50</u>: التزام الأولياء بمتابعة تمدرس أبنائهم وسلوكهم وانضباطهم عبر مختلف الوثائق المعتمدة والاستجابة لاستدعاءات إدارة المؤسسة التعليمية.
+				</p>
+			</details>
+		</main>
+		<footer>
+			<img src="assets/مجموعة الـ 22.png" alt="مجموعة الـ 22">
+			<img src="assets/الذكرى الـ 75 للنكبة الفلسطينية.png" alt="الذكرى الـ 75 للنكبة الفلسطينية">
+		</footer>
+	</body>
+</html>
