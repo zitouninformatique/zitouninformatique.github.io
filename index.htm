@@ -112,7 +112,7 @@
 			details[open] summary::after {
 				transform: rotate(180deg);
 			}
-			details:nth-last-child(-n + 2) summary {
+			details:nth-last-child(-n+2) summary {
 				background: #D21034;
 			}
 			summary ~ :not(fieldset) {
@@ -123,6 +123,10 @@
 				line-height: 0;
 				font-size: 0;
 			}
+			a {
+				direction: ltr;
+				display: inline-block;
+			}
 			a, label {
 				color: #D21034;
 				font-weight: bold;
@@ -130,7 +134,7 @@
 				cursor: pointer;
 			}
 			a:active, label:active {
-				color: #006633 !important;
+				color: #006633;
 			}
 			a:visited {
 				color: #D21034;
@@ -169,6 +173,9 @@
 			button:active {
 				background: #006633;
 			}
+			span {
+				display: none;
+			}
 			@media print {
 				@page {
 					margin: 1cm;
@@ -191,7 +198,7 @@
 				details {
 					box-shadow: none;
 				}
-				details:nth-last-child(-n + 2) {
+				details:nth-last-child(-n+2) {
 					display: none;
 				}
 				summary {
@@ -204,6 +211,17 @@
 				fieldset {
 					border: .5pt solid #000;
 					border-radius: unset;
+				}
+				span {
+					display: unset;
+				}
+				a, a:visited {
+					color: #000;
+					font-weight: normal;
+					text-decoration: none;
+				}
+				details:nth-last-child(3) > :nth-child(n+3) {
+					display: none;
 				}
 				footer {
 					display: none;
@@ -266,7 +284,9 @@
 				<p>
 					<u>الكفاءة المستهدفة</u>: توظيف الذكاء الاصطناعي لإنشاء صفحة ويب حول الوحدة التعليمية الأولى للمجال التعلمي الأول.
 					<u>الوسائل المطلوبة</u>: حاسوب متصل بالأنترنيت أو هاتف ذكي.
-					<u>خطوات التنفيذ</u>:
+					<u>خطوات التنفيذ</u>: <span> افتح المتصفّح للولوج إلى موقع الأستاذ، ثم اتّبع التعليمات الموضّحة لتنفيذ النشاط الخاص بالوحدة التعليمية عبر الرابط: <a href="https://zitouninformatique.github.io/" target="_blank" rel="noopener">https://zitouninformatique.github.io/</a></span>
+				</p>
+				<p>
 					1. <a href="https://gemini.google.com" target="_blank" rel="noopener">انقر هنا لفتح موقع Gemini في تبويب جديد</a>، ثم سجل الدخول باستخدام حساب Google الخاص بك.
 					2. انقر على الزر <label for="button1">نسخ التعليمات والتوجيهات</label> أدناه ثم ألصقها في صندوق محادثة Gemini، وانقر على زر الإرسال.
 				</p>
@@ -275,7 +295,7 @@
 					<p>
 						أنشئ صفحة ويب متجاوبة مع مختلف الشاشات، مصممة كمستند قابل للتعديل بحجم A4، وفق الشروط التالية:
 						1. عرض واجهة الصفحة باللون الأبيض وسط خلفية رمادية فاتحة تسمح بمعاينة المحتوى وتعديله قبل الطباعة، مع تحديد الهوامش بـ 1 سم من الجهات الأربع.
-						2. شرح وتوضيح جميع المفاهيم الواردة أدناه، مع مراعاة السلامة اللغوية إملائياً ونحوياً، واستخدام المصطلحات العلمية المعتمدة:
+						2. شرح وتوضيح جميع المفاهيم الواردة أدناه، مع مراعاة السلامة اللغوية إملائياً ونحوياً، واستخدام المصطلحات العلمية المعتمدة في المناهج التعليمية الجزائرية:
 						– مفهوم البيانات؛
 						– مفهوم المعلومات؛
 						– مفهوم التقنية؛
@@ -283,7 +303,7 @@
 						– مجالات تقنية المعلومات؛
 						– مفهوم تكنولوجيا الإعلام والاتصال؛
 						– أهم مراحل تطور تكنولوجيا الإعلام والاتصال.
-						3. إدراج المراجع العلمية المعتمدة لكل مفهوم (كتب، مقالات أكاديمية، أو معايير دولية).
+						3. توثيق جميع المحتويات بالاعتماد على المراجع والمصادر العربية المعتمدة، من كتب ومقالات أكاديمية ووثائق رسمية.
 					</p>
 				</fieldset>
 				<p>
